@@ -1,0 +1,8 @@
+<view class="{{wrapperClasses}}" style="{{resolvedWrapperStyle}}">
+  <t-icon
+    name="{{name}}"
+    size="{{size}}"
+    color="{{resolvedColor}}"
+    customStyle="{{iconStyle}}"
+  />
+</view>

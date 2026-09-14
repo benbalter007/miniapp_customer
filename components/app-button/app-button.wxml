@@ -1,0 +1,8 @@
+<view
+  class="app-button app-button--{{type}} {{block ? 'app-button--block' : ''}} {{disabled ? 'app-button--disabled' : ''}}"
+  style="{{resolvedStyle}}"
+  bindtap="onTap"
+>
+  <app-icon wx:if="{{icon}}" name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}" tone="plain" />
+  <text class="app-button__text">{{text}}</text>
+</view>

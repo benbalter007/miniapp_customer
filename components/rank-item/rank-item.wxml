@@ -1,0 +1,21 @@
+<view class="rank-item" bindtap="onTap">
+  <view class="rank-item__rank-wrap">
+    <view wx:if="{{item.rank <= 3}}" class="rank-item__medal rank-item__medal--{{item.rank}}">
+      <text class="rank-item__medal-num">{{item.rank}}</text>
+    </view>
+    <text wx:else class="rank-item__rank-num">{{item.rank}}</text>
+  </view>
+
+  <view class="rank-item__info">
+    <text class="rank-item__name">{{item.name || item.nickName}}</text>
+    <text
+      class="rank-item__honor rank-item__honor--{{item.honorLevel || 'bronze'}}"
+      wx:if="{{item.honorTitle}}"
+    >{{item.honorTitle}}</text>
+  </view>
+
+  <view class="rank-item__points">
+    <text class="rank-item__points-num">{{item.points}}</text>
+    <text class="rank-item__points-unit">{{item.unit || '分'}}</text>
+  </view>
+</view>

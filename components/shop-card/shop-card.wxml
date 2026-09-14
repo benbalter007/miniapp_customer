@@ -1,0 +1,80 @@
+<!--
+  店铺卡片组件
+  结构：封面 + 信息区 + 底栏预约按钮
+-->
+<view
+  class="shop-card {{isOpen ? '' : 'shop-card--closed'}}"
+  bindtap="onTapCard"
+  hover-class="card-hover"
+  hover-stay-time="100"
+  aria-label="{{name}}，{{distance}}，{{businessStatus}}"
+>
+  <view class="shop-card__body">
+    <view class="shop-card__cover-wrap">
+      <view
+        class="shop-card__cover shop-card__cover--photo"
+        wx:if="{{coverType === 'photo' && !coverUrl}}"
+        aria-label="店铺门头"
+      />
+      <image
+        class="shop-card__cover"
+        wx:elif="{{coverUrl}}"
+        src="{{coverUrl}}"
+        mode="aspectFill"
+        lazy-load
+        aria-label="店铺门头"
+      />
+      <view
+        class="shop-card__logo"
+        wx:else
+        style="background-color: {{logoColor}};"
+        aria-label="{{name}}标识"
+      >
+        <text class="shop-card__logo-text">{{logoText}}</text>
+      </view>
+      <view class="shop-card__badge" wx:if="{{isFeatured}}">官方甄选</view>
+    </view>
+
+    <view class="shop-card__content">
+      <view class="shop-card__header">
+        <text class="shop-card__name">{{name}}</text>
+        <view
+          class="shop-card__distance-wrap"
+          wx:if="{{distance}}"
+          catchtap="onTapAddress"
+          data-latitude="{{latitude}}"
+          data-longitude="{{longitude}}"
+          data-address="{{address}}"
+          data-name="{{name}}"
+        >
+          <text class="shop-card__distance-icon" aria-label="定位">📍</text>
+          <text class="shop-card__distance">{{distance}}</text>
+        </view>
+      </view>
+
+      <view class="shop-card__tags" wx:if="{{rating || hygieneLevel}}">
+        <text class="shop-card__chip" wx:if="{{rating}}">{{rating}}</text>
+        <text class="shop-card__chip" wx:if="{{hygieneLevel}}">{{hygieneLevel}}</text>
+      </view>
+
+      <view class="shop-card__meta">
+        <view class="shop-card__score-wrap">
+          <t-icon class="inline-icon" name="star" size="12" color="#f1af58" />
+          <text class="shop-card__score">{{score}}</text>
+        </view>
+        <text class="shop-card__dot">·</text>
+        <text class="shop-card__status {{isOpen ? 'shop-card__status--open' : 'shop-card__status--closed'}}">{{businessStatus}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="shop-card__footer">
+    <view
+      class="shop-card__book-btn {{isOpen ? '' : 'shop-card__book-btn--disabled'}}"
+      catchtap="onTapBook"
+      aria-label="{{isOpen ? '立即预约' : '休息中'}}"
+    >
+      {{isOpen ? '立即预约' : '休息中'}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+.app-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  min-height: 80rpx;
+  padding: 0 28rpx;
+  border-radius: var(--radius-pill);
+  box-sizing: border-box;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.app-button:active {
+  transform: scale(0.98);
+}
+
+.app-button--block {
+  width: 100%;
+}
+
+.app-button--primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-primary-foreground);
+}
+
+.app-button--secondary {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.app-button--ghost {
+  background: transparent;
+  border: 1rpx solid rgba(1, 119, 129, 0.22);
+  color: var(--color-primary);
+}
+
+.app-button--disabled {
+  opacity: 0.45;
+}
+
+.app-button__text {
+  font-size: var(--font-small);
+  line-height: 1;
+  font-weight: var(--font-weight-semibold);
+}

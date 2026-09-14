@@ -1,0 +1,131 @@
+.rank-item {
+  display: flex;
+  align-items: center;
+  background: var(--color-card);
+  border-radius: var(--radius-card);
+  padding: 24rpx 28rpx;
+  margin-bottom: var(--spacing-list-row-gap);
+  box-shadow: var(--shadow-card);
+}
+
+.rank-item__rank-wrap {
+  width: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.rank-item__medal {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 3rpx;
+  border-style: solid;
+  background: #ffffff;
+}
+
+.rank-item__medal--1 {
+  border-color: #f5c842;
+}
+
+.rank-item__medal--2 {
+  border-color: #b0b8c8;
+}
+
+.rank-item__medal--3 {
+  border-color: #e8a87c;
+}
+
+.rank-item__medal-num {
+  font-size: var(--font-compact);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.rank-item__medal--1 .rank-item__medal-num {
+  color: #f5c842;
+}
+
+.rank-item__medal--2 .rank-item__medal-num {
+  color: #b0b8c8;
+}
+
+.rank-item__medal--3 .rank-item__medal-num {
+  color: #e8a87c;
+}
+
+.rank-item__rank-num {
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-hint);
+}
+
+.rank-item__info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  min-width: 0;
+}
+
+.rank-item__name {
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.rank-item__honor {
+  display: inline-flex;
+  align-items: center;
+  padding: 4rpx 16rpx;
+  border-radius: var(--radius-tag);
+  font-size: var(--font-tiny);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rank-item__honor--gold {
+  background: #fef3e0;
+  color: #c47a20;
+}
+
+.rank-item__honor--silver {
+  background: #e8eef2;
+  color: #5a7080;
+}
+
+.rank-item__honor--bronze {
+  background: var(--color-primary-light);
+  color: var(--color-secondary-foreground);
+}
+
+.rank-item__honor--shop {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.rank-item__points {
+  display: flex;
+  align-items: baseline;
+  flex-shrink: 0;
+  margin-left: 16rpx;
+}
+
+.rank-item__points-num {
+  font-size: var(--font-card-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.rank-item__points-unit {
+  font-size: var(--font-tiny);
+  color: var(--color-text-hint);
+  margin-left: 2rpx;
+}

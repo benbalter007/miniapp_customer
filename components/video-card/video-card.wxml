@@ -1,0 +1,38 @@
+<view class="video-card" bindtap="onTap" aria-label="视频：{{video.title}}，作者{{video.author}}，时长{{video.duration}}">
+  <view class="video-card__cover-wrap">
+    <image
+      class="video-card__cover"
+      wx:if="{{video.cover}}"
+      src="{{video.cover}}"
+      mode="aspectFill"
+      aria-label="视频封面"
+    />
+    <view
+      class="video-card__cover video-card__cover--placeholder video-card__cover--{{video.coverTone || 'teal'}}"
+      wx:else
+    ></view>
+    <view class="video-card__play-btn">
+      <view class="video-card__play-triangle"></view>
+    </view>
+    <view class="video-card__duration-badge" wx:if="{{video.duration}}">
+      <text>{{video.duration}}</text>
+    </view>
+  </view>
+
+  <view class="video-card__info">
+    <text class="video-card__title">{{video.title}}</text>
+    <view class="video-card__meta">
+      <text class="video-card__author">{{video.author}}</text>
+      <view class="video-card__meta-right">
+        <text class="video-card__views">{{video.views}}播放</text>
+        <view
+          class="video-card__bookmark {{video.isFavorite ? 'video-card__bookmark--active' : ''}}"
+          catchtap="onToggleFavorite"
+          aria-label="{{video.isFavorite ? '取消收藏' : '收藏'}}"
+        >
+          <view class="video-card__bookmark-shape"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
